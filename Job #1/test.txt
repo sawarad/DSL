@@ -4,7 +4,7 @@ int main(int argc, char* argv[])
 {
     std::cout << argc;
     if (argc == 1)
-        std::cout << "Correct!";
-    else
-        std::cout << "Incorrect!"
+		std::cout << "Correct!";
+	else
+		std::cout << "Incorrect!"
 }
