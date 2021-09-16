@@ -1,5 +1,5 @@
 # initialize starter parameters
-whitespaces = {" ", "\n", "\t", "\r"}
+whitespaces = {" ", "\n", "\t"}
 filename = "test.txt"
 
 
@@ -19,22 +19,23 @@ def parse_string(text_to_parse: str) -> list:
     """
     
     result = []  # result list
-    word = []  # separate words split by whitespaces
-    # word is a list, not a string because string is immutable and will reallocate memory on each symbol appended
+    current_word = []  # separate words split by whitespaces
+    # current_word is a list, not a string because string is immutable
+    # and will reallocate memory on each symbol appended
     
     # for each symbol in text
     for char in text_to_parse:
         if is_whitespace(char):
             # if char is a whitespace there are 2 cases for previous symbol
-            # it was not a whitespace, then word is not empty and it needs to be saved and cleared
-            # it was a whitespace, then word is empty and char is skipped
-            if word:
-                # save word and clear it (join is used to correctly cast list to string)
-                result.append("".join(word))
-                word.clear()
+            # it was not a whitespace, then current_word is not empty and it needs to be saved and cleared
+            # it was a whitespace, then current_word is empty and char is skipped
+            if current_word:
+                # save current_word and clear it (join is used to correctly cast list to string)
+                result.append("".join(current_word))
+                current_word.clear()
         else:
-            # if char is not a whitespace store it in word
-            word.append(char)
+            # if char is not a whitespace store it in current_word
+            current_word.append(char)
     
     return result
 
