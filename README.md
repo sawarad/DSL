@@ -6,3 +6,7 @@ This repository contains problems for solving for studying course Domain-Specifi
 
 Please, create a fork of this repository in your own repository.
 After completing a job send a link to the fork using the corresponding assignment of Google Classroom.
+
+## Repository owner
+
+This repository is owned by Oleksandr Radchenko MF-41
