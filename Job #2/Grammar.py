@@ -37,5 +37,14 @@ def is_token(to_check) -> bool:
     return len(to_check) == 2 and isinstance(to_check[0], Class) and isinstance(to_check[1], Value)
 
 
+def is_empty_token(to_check) -> bool:
+    if not is_token(to_check):
+        return False
+    
+    # assume empty token is a token with class == 0 and empty value
+    # can be changed without affecting other code
+    return to_check[0] == 0 and to_check[1] == ""
+
+
 def is_var(to_check) -> bool:
     return isinstance(to_check, Var)
