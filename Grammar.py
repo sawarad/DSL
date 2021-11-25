@@ -46,5 +46,9 @@ def is_empty_token(to_check) -> bool:
     return to_check[0] == 0 and to_check[1] == ""
 
 
+def get_empty_token() -> Token:
+    return 0, ""
+
+
 def is_var(to_check) -> bool:
     return isinstance(to_check, Var)
